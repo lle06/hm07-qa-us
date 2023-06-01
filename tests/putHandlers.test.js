@@ -17,7 +17,7 @@ const requestBody = {
 test('status should be 200', async () => {
 		let actualStatus;
     try {
-		const response = await fetch(`${config.API_URL}/api/v1/kits/6`, {
+		const response = await fetch(`${config.API_URL}/api/v1/kits/5`, {
 			method: 'PUT',
 			headers: {
 			'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ test('status should be 200', async () => {
 	
 	async function putRequest() {
 		try {
-			const response = await fetch(`${config.API_URL}/api/v1/kits/6`, {
+			const response = await fetch(`${config.API_URL}/api/v1/kits/5`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json'
