@@ -2,22 +2,13 @@
 const config = require('../config');
 
 const requestBody = {
-	'productsList': [
-		{
-			'id': 1,
-			'quantity': 2
-		},
-		{
-			'id': 4,
-			'quantity':1
-		}
-	]
+	"price": 175
 }
 
 test('status should be 200', async () => {
 		let actualStatus;
     try {
-		const response = await fetch(`${config.API_URL}/api/v1/kits/5`, {
+		const response = await fetch(`${config.API_URL}/api/v1/products/1`, {
 			method: 'PUT',
 			headers: {
 			'Content-Type': 'application/json'
@@ -27,23 +18,23 @@ test('status should be 200', async () => {
 		actualStatus = response.status;
 	} catch (error) {
 		console.error(error);
-	} 
-	
-	async function putRequest() {
-		try {
-			const response = await fetch(`${config.API_URL}/api/v1/kits/5`, {
+	}
+	expect(actualStatus).toBe(200)
+});
+
+test('body should contain', async () => {
+		let actualResponseBody;
+    try {
+		const response = await fetch(`${config.API_URL}/api/v1/products/1`, {
 			method: 'PUT',
 			headers: {
-				'Content-Type': 'application/json'
+			'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(requestBody)
 		});
-		const data = await response.json();
-		console.log(data);
+		actualResponseBody = await response.json();
 	} catch (error) {
 		console.error(error);
 	}
-}	
-	await expect(actualStatus).toBe(200);
-	await putRequest();
+	expect(actualResponseBody).toEqual({ "ok": true });
 });

@@ -3,23 +3,13 @@ const config = require('../config');
 
 const requestBody = {
     // put your body here
-		'deliveryTime': 9,
-    'products': [
-        {
-            'id': 1,
-            'quantity': 1
-        },
-        {
-            'id': 4,
-            'quantity': 3
-        }
-    ]
+		'name': 'my test card'
 }
 
-test('status should be 200', async () => {
+test('status should be 201', async () => {
 		let actualStatus;
     try {
-		const response = await fetch(`${config.API_URL}/everything-you-need/v1/calculate`, {
+		const response = await fetch(`${config.API_URL}/api/v1/cards`, {
 			method: 'POST',
 			headers: {
 			'Content-Type': 'application/json'
@@ -29,22 +19,23 @@ test('status should be 200', async () => {
 		actualStatus = response.status;
 	} catch (error) {
 		console.error(error);
-	} 
-	async function postRequest() {
-		try {
-		const response = await fetch(`${config.API_URL}/everything-you-need/v1/calculate`, {
+	}
+	expect(actualStatus).toBe(201);
+});
+
+test('body should be', async () => {
+		let actualResponseBody;
+    try {
+		const response = await fetch(`${config.API_URL}/api/v1/cards`, {
 			method: 'POST',
 			headers: {
 			'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(requestBody)
 		});
-		const data = await response.json();
-		console.log(data);
+		actualResponseBody = await response.json();
 	} catch (error) {
 		console.error(error);
 	}
-}
-	await expect(actualStatus).toBe(200)
-	await postRequest();
+	expect(actualResponseBody.name).toBe('my test card');
 });
