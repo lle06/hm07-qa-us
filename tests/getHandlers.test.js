@@ -1,7 +1,8 @@
-// eslint-disable-next-line no-undef
+
 /*GET test 1 checks if the request returns a status code 200 and 
 and test 2 checks the response body for the kit name 'For picnic' */
 
+// eslint-disable-next-line no-undef
 const config = require('../config.js');
 
 test('status should be 200', async () => {
