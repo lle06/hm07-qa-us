@@ -1,4 +1,8 @@
 // eslint-disable-next-line no-undef
+/*POST test 1 checks if the request returns a status code 201 and 
+and test 2 checks the response body for the added card name 'My test card'*/
+
+
 const config = require('../config');
 
 const requestBody = {

@@ -1,4 +1,7 @@
 // eslint-disable-next-line no-undef
+/*PUT test 1 checks if the request returns a status code 200 and 
+and test 2 checks the response body contains an "ok":true */
+
 const config = require('../config');
 
 const requestBody = {

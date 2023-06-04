@@ -1,4 +1,7 @@
 // eslint-disable-next-line no-undef
+/*GET test 1 checks if the request returns a status code 200 and 
+and test 2 checks the response body for the kit name 'For picnic' */
+
 const config = require('../config');
 
 test('status should be 200', async () => {
@@ -13,12 +16,12 @@ test('status should be 200', async () => {
 });
 
 test('body should contain', async () => {
-	let actualStatus;
+	let actualResponseBody;
 	try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/1`);
-		actualStatus = await response.json();
+		actualResponseBody = await response.json();
 	} catch (error) {
 		console.error(error);
 	}
-	expect(actualStatus.name).toBe('For picnic');
+	expect(actualResponseBody.name).toBe('For picnic');
 });
