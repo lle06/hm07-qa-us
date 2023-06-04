@@ -3,7 +3,7 @@
 and test 2 checks the response body for the added card name 'My test card'*/
 
 
-const config = require('../config');
+const config = require('../config.js');
 
 const requestBody = {
     // put your body here

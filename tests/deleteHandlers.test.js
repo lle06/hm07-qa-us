@@ -3,7 +3,7 @@
 test 2 checks the delete status code is 200 and test 3 checks the 
 response body to see if it returns "ok":true */
 
-const config = require('../config');
+const config = require('../config.js');
 
 const requestBody = {
 	'name': 'New test kit',
