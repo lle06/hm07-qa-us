@@ -1,9 +1,10 @@
-// eslint-disable-next-line no-undef
+
 /*DELETE test 1 checks that creating a new kit returns a 201 status code,
 test 2 checks the delete status code is 200 and test 3 checks the 
 response body to see if it returns "ok":true */
 
-const config = require('../config.js');
+// eslint-disable-next-line no-undef
+const config = require('../config');
 
 const requestBody = {
 	'name': 'New test kit',
