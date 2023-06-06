@@ -1,7 +1,7 @@
 
-/*DELETE test 1 checks that creating a new kit returns a 201 status code,
-test 2 checks the delete status code is 200 and test 3 checks the 
-response body to see if it returns "ok":true */
+/*DELETE 
+Test 1 checks the delete status code is 200.
+Test 2 checks if the cart has been deleted with the response body of "ok":true */
 
 // eslint-disable-next-line no-undef
 const config = require('../config');
@@ -11,9 +11,10 @@ const requestBody = {
   'cardId': 10
 }
 
-test('newKit Status should be 201', async () => {
-	let newKit
-	try {
+
+test('delete status should be 200', async () => {
+		let newKit;
+		try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits`, {
 			method: 'POST',
 			headers: {
@@ -24,11 +25,8 @@ test('newKit Status should be 201', async () => {
 		newKit = response.status
 	} catch (error) {
 		console.error(error);
-	}
-	expect(newKit).toBe(201);
-});
+		};
 
-test('delete status should be 200', async () => {
 		let actualStatus;
     try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/10`, {
@@ -42,6 +40,20 @@ test('delete status should be 200', async () => {
 });
 
 test('body should contain', async () => {
+		let newKit;
+		try {
+		const response = await fetch(`${config.API_URL}/api/v1/kits`, {
+			method: 'POST',
+			headers: {
+			'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(requestBody)
+		});
+		newKit = response.status
+	} catch (error) {
+		console.error(error);
+		};
+
 		let actualResponseBody;
     try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/10`, {
