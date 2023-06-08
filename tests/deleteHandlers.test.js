@@ -22,10 +22,11 @@ test('delete status should be 200', async () => {
 			},
 			body: JSON.stringify(requestBody)
 		});
-		newKit = response.status
+		newKit = await response.json();
 	} catch (error) {
 		console.error(error);
-		};
+		}
+		console.log(newKit.card);
 
 		let actualStatus;
     try {
@@ -49,10 +50,11 @@ test('body should contain', async () => {
 			},
 			body: JSON.stringify(requestBody)
 		});
-		newKit = response.status
+		newKit = await response.json();
 	} catch (error) {
 		console.error(error);
-		};
+		}
+		console.log(newKit.card);
 
 		let actualResponseBody;
     try {
