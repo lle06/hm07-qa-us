@@ -18,9 +18,9 @@ To get started, please follow these steps:
 
 1. Clone the repository to your computer:
    if using HTTPS
-   git clone http://github.com/username/hm07-qa-us.git
+   git clone http://github.com/lle06/hm07-qa-us.git
    if using SSH
-   git clone http://git@github.com:username/hm07-qa-us.git
+   git clone git@github.com:lle06/hm07-qa-us.git
 
 2. Install the project dependencies listed in the project's 'package.json' file by using 'npm install'
 3. Configure the project by navigating to the file 'config.js' and replace the API URL with the link generated after the launch of Urban Grocers server. This will declare the URL in one place and used throughout the whole project.
