@@ -1,4 +1,4 @@
-# Sprint 7 projectls
+# Sprint 7 project
 
 \*
 PROJECT NAME — Sprint 7 Urban Grocers
